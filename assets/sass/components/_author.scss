@@ -1,0 +1,62 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+.author-template {
+  .author {
+
+    &-profile {
+      width: 80%;
+      margin-top: 120px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 0;
+
+      @include mobile {
+        margin-top: 0;
+      }
+    }
+
+    &-profile span,
+    &-meta span {
+      @include mobile {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-title {
+      font-size: 2.8rem;
+
+      @include mobile {
+        font-size: 2.2rem;
+      }
+    }
+
+    &-bio {
+      font-size: 1.5rem;
+
+      @include mobile {
+        font-size: 1.2rem;
+      }
+    }
+
+    &-location,
+    &-stats {
+      font-size: 1.3rem;
+    }
+  }
+
+  .post {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-title {
+    font-size: 2.5rem !important;
+    margin-top: 20px;
+
+    @include mobile {
+      font-size: 2.2rem !important;
+    }
+  }
+}

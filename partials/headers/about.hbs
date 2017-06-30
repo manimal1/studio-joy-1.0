@@ -1,0 +1,24 @@
+<header class="about-header collapsable-header">
+    <div class="sticky-shrinknav-header mobile-hide">
+        <div>
+            <div class="sticky-shrinknav-header-image"></div>
+            <h1 class="sticky-shrinknav-header-title">The Team</h1>
+            {{!--<h2 class="sticky-shrinknav-header-description">Better yet, reach out and connect with any one of them.</h2>--}}
+            <div class="sticky-shrinknav-header-overlay"></div>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+
+    <div class="mobile-only mobile-header">
+        <img class="mobile-header-image" src="{{asset 'images/headers/mobile/home.jpg'}}" />
+        <div class="mobile-header-text">
+            <h1 class="mobile-header-title">{{@blog.title}}</h1>
+            <h2 class="mobile-header-description">{{@blog.description}}</h2>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+</header>

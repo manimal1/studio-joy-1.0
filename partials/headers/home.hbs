@@ -1,0 +1,59 @@
+<header class="home-header collapsable-header">
+    <div class="sticky-shrinknav-header video-header mobile-hide">
+        <div class="video-wrapper">
+            <video class="sticky-shrinknav-header-video" src="{{asset "images/headers/homepage-header-video.mov"}}" class="sticky-shrinknav-header-video video-frame" autoplay loop muted>
+            </video>
+            <h1 class="sticky-shrinknav-header-title">STUDIO JOY</h1>
+            {{!--<h2 class="sticky-shrinknav-header-description">{{@blog.description}}</h2>--}}
+            <h2 class="sticky-shrinknav-header-description">Pilates is more than a workout, it's a Lifestyle!</h2>
+            <div class="sticky-shrinknav-header-overlay"></div>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+
+    <div class="mobile-only mobile-header">
+        <img class="mobile-header-image" src="{{asset 'images/headers/mobile/home.jpg'}}" />
+        <div class="mobile-header-text">
+            <h1 class="mobile-header-title">{{@blog.title}}</h1>
+            <h2 class="mobile-header-description">{{@blog.description}}</h2>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+</header>
+
+{{!--
+<script async src="https://www.youtube.com/iframe_api"></script>
+<script>
+ function onYouTubeIframeAPIReady() {
+  var player;
+  player = new YT.Player('homePageYouTubeVideoPlayer', {
+    videoId: 'YcN3UZoxgcM', // YouTube Video ID
+    width: 560,               // Player width (in px)
+    height: 316,              // Player height (in px)
+    playerVars: {
+      rel: 0,
+      autoplay: 1,        // Auto-play the video on load
+      controls: 0,        // Show pause/play buttons in player
+      showinfo: 0,        // Hide the video title
+      modestbranding: 1,  // Hide the Youtube Logo
+      loop: 1,            // Run the video in a loop
+      fs: 0,              // Hide the full screen button
+      cc_load_policy: 0, // Hide closed captions
+      iv_load_policy: 3,  // Hide the Video Annotations
+      autohide: 0,        // Hide video controls when playing
+      playList: 'YcN3UZoxgcM'
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+      }
+    }
+  });
+ }
+
+</script>
+--}}

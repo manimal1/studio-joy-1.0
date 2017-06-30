@@ -1,0 +1,196 @@
+.classes {
+
+  &-header {
+    .sticky-shrinknav-header-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-image: url("../images/headers/classes.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  div.healcode .class_list h1.class_name, div.healcode .class_list h1.trainer_name, div.healcode .trainer_list h1.class_name, div.healcode .trainer_list h1.trainer_name {
+    font-family: 'Cabin', sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  .healcode.schedule {
+    
+    .header {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 50px;
+      text-align: center;
+
+      h1 {
+        margin-top: 20px;
+      }
+    }
+
+    .action_icon {
+      &.cart_version {
+        margin-right: 10px;
+      }
+    }
+
+    .filters {
+      
+      select {
+        font-size: 0.7em;
+        padding: 0px;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        border-color: #555;
+      }
+
+      .checkboxes {
+        input {
+          height: 20px;
+          width: 20px;
+          vertical-align: middle;
+          border: 1px solid #555;
+
+          &:checked {
+            background-color: #555;
+          }
+        }
+
+        label {
+          margin-bottom: 1rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    table tbody {
+      border: 0;
+    }
+
+    .hc_footer {
+      display: none !important;
+
+      a {
+        display: none !important;
+      }
+    }
+  }
+
+  table tbody > tr:nth-child(odd) > td, table tbody > tr:nth-child(odd) > th {
+    background-color: white;
+  }
+
+  // Styling for list of scheduled classes
+  ol.schedule_list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin: 0 auto;
+    width: 90%;
+    align-items: stretch;
+  }
+
+  li.schedule_date {
+    display: block;
+    width: 100%;
+    font-family: 'cabin', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    border: 0;
+    box-shadow: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  li.DropIn {
+    position: relative;
+    width: 31%;
+    min-height: 200px;
+    margin: 1.15%;
+    padding: 20px;
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    border: 3px solid #414a4c;
+    // box-shadow: 1px 1px 2px #414a4c;
+
+    @include tablet {
+      width: 47.6%;
+    }
+
+    @include mobile {
+      width: 100%;
+      min-height: 170px;
+      margin: 10px 0px;
+    }
+
+    .hc_time {
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      font-family: 'cabin', sans-serif;
+    }
+
+    .classname {
+      @include mobile {
+        font-size: 1.3em;
+      }
+    }
+
+    .trainer {
+      font-size: 0.8em;
+
+      @include mobile {
+        font-size: 1em;
+      }
+    }
+
+    .signup {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hc_class_availability {
+      
+      .hc_waitlist {
+        display: block;
+        color: red;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    .hc_cart_button {
+      a {
+        padding: 7px 15px;
+        font-size: 0.9em;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+
+        &:hover {
+          background-color: lighten(black, 20%);
+          // color: black;
+        }
+      }
+    }
+  }
+
+  .no_classes {
+    width: 100%;
+    text-align: center;
+    color: red;
+  } 
+}
+
+body.in-iframe {
+  footer.footer {
+    display: none !important;
+  }
+}

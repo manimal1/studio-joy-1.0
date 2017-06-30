@@ -1,0 +1,41 @@
+{{!-- The tiny footer at the very bottom --}}
+<footer class="footer clearfix">
+    <div class="row footer__row">
+        <div class="small-12 medium-4 large-4 columns">
+            <h2 class="footer__title">Connect</h2>
+            <div class="footer__social-wrapper">
+                <a class="footer__social-icon" href="https://web.facebook.com/studiojoypilates/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <a class="footer__social-icon" href="https://www.instagram.com/studiojoypilates/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a class="footer__social-icon"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="small-12 medium-4 large-4 columns">
+            <h2 class="footer__title">Join our Newsletter</h2>
+            <!-- Begin MailChimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+            <style type="text/css">
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+                /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+            </style>
+            <div id="mc_embed_signup">
+            <form action="//studiojoypilates.us16.list-manage.com/subscribe/post?u=15dcd4c2dfa0f564102438bec&amp;id=61fbc71709" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">Subscribe to our mailing list</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_15dcd4c2dfa0f564102438bec_61fbc71709" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+            </div>
+            <!--End mc_embed_signup-->
+        </div>
+        <div class="small-12 medium-4 large-4 columns">
+            <h2 class="footer__title">Contact</h2>
+            <p class="footer__contact-info footer__contact-number" href="#">Call us at (209) 555-1234</p>
+            <p class="footer__contact-info">or <a class="footer__contact-email" href="mailto:jolene@studiojoypilates.com">Email Us</a></p>
+        </div>
+    </div>
+    <p class="footer__copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</p>
+</footer>

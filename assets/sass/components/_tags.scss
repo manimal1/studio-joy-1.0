@@ -1,0 +1,76 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+.tag-template {
+
+  .tag-head {
+    margin-bottom: 0;
+  }
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .no-cover.main-header {
+    background: transparent;
+  }
+
+  .page-title {
+    position: relative;
+    padding-bottom: 5px;
+    font-size: 3em;
+    border-bottom: 1px solid $light-grey-2;
+  }
+
+  .page-description {
+    font-size: 1.5em;
+  }
+
+  .page-title:after {
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: #E7EEF2 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: #FFF;
+    border-radius: 100%;
+    box-shadow: #FFF 0 0 0 5px;
+  }
+
+  .posts-list {
+    .post {
+      margin-top: 0;
+    }
+
+    .post-title {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+  }
+
+  .tags-list {
+    list-style: none;
+    text-align: right;
+    margin-bottom: 20px;
+    margin-right: 40px;
+
+    @include mobile {
+      text-align: center;
+      width: 80%;
+      margin-top: 0;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #e7e7e7;
+    }
+
+    &__tag {
+      font-size: 0.9em;
+    }
+  }
+}

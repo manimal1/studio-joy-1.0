@@ -1,0 +1,40 @@
+@import './variables';
+@import './mixins';
+
+.mobile-only {
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.mobile-hide {
+    display: block;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.separator-left {
+    position: relative;
+    text-align: left;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 4rem;
+        border-bottom: 0.125rem solid #000000;
+        bottom: -5px;
+        left: 0;
+    }
+}
+
+.post-head,
+.tag-head,
+.author-head {
+    @include mobile {
+        overflow: visible;
+    }
+}

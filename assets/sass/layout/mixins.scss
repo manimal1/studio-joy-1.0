@@ -1,0 +1,55 @@
+$mobile-width: 39.9375em;
+$tablet-width: 40em;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{40em}) and (max-width: #{63.9375em}) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+    @media (min-width: #{$tablet-width}) and (max-width: #{920px}) {
+      @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media (min-width: #{921px}) and (max-width: #{1024px}) {
+      @content;
+    }
+}
+
+@mixin handheld {
+    @media (max-width: #{63.9375em}) {
+      @content;
+    }
+}
+
+@mixin desktop {
+  @media (min-width: #{64em}) {
+    @content;
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

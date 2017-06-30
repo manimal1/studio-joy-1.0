@@ -1,0 +1,107 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+$marketing-site-three-up-width: 900px;
+
+.marketing-site-content-section {
+  display: flex;
+  flex-wrap: wrap;
+
+  .button.round {
+    border-radius: 5000px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .button.square {
+    background: transparent;
+    border-radius: 0;
+    border: 1px solid black;
+    font-size: 1rem;
+    color: black;
+    padding: 0.75em 1em;
+
+    healcode-widget {
+      a {
+      &:hover {
+        color: white;
+        background: black;
+      }
+    }
+    }
+
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+
+  .marketing-site-content-section-img {
+    align-self: center;
+    flex: 1 0 100%;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+    }
+  }
+
+  .marketing-site-content-section-block {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex: 1 0 100%;
+    align-self: stretch;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+      // padding: 4rem;
+    }
+
+    @include mobile {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.marketing-site-three-up {
+  text-align: center;
+  padding: 3rem 0;
+
+  .row {
+    max-width: $marketing-site-three-up-width;
+  }
+
+  .columns {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: 40em) {
+      margin-bottom: 0;
+    }
+  }
+
+  .fa {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+}
+
+.marketing-site-three-up-headline {
+  margin-bottom: 5rem;
+  font-size: 24px;
+}
+
+.marketing-site-content-section-block-subheader {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,24 @@
+<header class="classes-header collapsable-header">
+    <div class="sticky-shrinknav-header mobile-hide">
+        <div>
+            <div class="sticky-shrinknav-header-image"></div>
+            <h1 class="sticky-shrinknav-header-title">A Class for Everyone</h1>
+            {{!--<h2 class="sticky-shrinknav-header-description">No matter your skill level, we have something for you</h2>--}}
+            <div class="sticky-shrinknav-header-overlay"></div>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+
+    <div class="mobile-only mobile-header">
+        <img class="mobile-header-image" src="{{asset 'images/headers/mobile/classes.jpg'}}" />
+        <div class="mobile-header-text">
+            <h1 class="mobile-header-title">Classes</h1>
+            <h2 class="mobile-header-description">Something for everyone</h2>
+        </div>
+        <nav>
+            {{navigation}}
+        </nav>
+    </div>
+</header>

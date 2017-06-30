@@ -1,0 +1,243 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+$social-brand-facebook: #3b5998;
+$social-brand-twitter: #55acee;
+$social-brand-linkedin: #007bb5;
+$about-the-instructor-text-transform: uppercase;
+$about-the-instructor-separator-width: 5rem;
+$about-the-instructor-separator-thickness: 0.125rem;
+$card-margin: 10px;
+$instructor-row-padding: 20px;
+$instructor-image-size: 120px;
+
+.about-header {
+  .sticky-shrinknav-header-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    // background-image: url("../images/headers/about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .sticky-shrinknav-menu {
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+  }
+}
+
+.instructor {
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+  @include tablet {
+    padding-left: $instructor-row-padding + $card-margin;
+    padding-right: $instructor-row-padding + $card-margin;
+  }
+
+  @include mobile {
+    padding-left: $instructor-row-padding;
+    padding-right: $instructor-row-padding;
+  }
+
+  &__main-title {
+    margin-top: 30px;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    font-size: 1em;
+  }
+
+  &-row {
+    background-color: $white;
+    padding-top: $instructor-row-padding;
+    padding-bottom: $instructor-row-padding;
+
+    @include mobile {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .separator-left {
+      text-align: left;
+
+      @include mobile {
+        text-align: center;
+      }
+
+      &::after {
+        position: relative;
+        width: $about-the-instructor-separator-width;
+        border-bottom: $about-the-instructor-separator-thickness solid $primary-color;
+        margin: 0.3rem auto 0;
+        margin-left: 0;
+
+        @include mobile {
+          margin: 0.3rem auto;
+        }
+      }
+
+      &.medium-center {
+        @include tablet {
+          text-align: center;
+        }
+
+        &::after {
+          @include tablet {
+            margin: 0.3rem auto;
+          }
+        }
+      }
+    }
+  }
+
+  &-card {
+    padding: 40px;
+    border: 1px solid $light-grey-2;
+    box-shadow: 1px 1px 1px $light-grey-2;
+
+    @include mobile {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    &.large-card {
+      min-width: 102%;
+      display: flex;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: -$card-margin;
+      margin-right: -$card-margin;
+
+      @include mobile {
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &.left-column {
+      margin-left: -$card-margin;
+      margin-right: $card-margin;
+
+      @include mobile {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &.right-column {
+      margin-left: $card-margin;
+      margin-right: -$card-margin;
+
+      @include mobile {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-title {
+    text-transform: $about-the-instructor-text-transform;
+  }
+
+  &-social {
+    text-align: center;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+
+    .fa-stack {
+      display: inline-block;
+      font-size: 1em;
+      line-height: 1.6em;
+      width: 1.5em;
+      height: 1.5em;
+
+      .fa-circle {
+        font-size: 1.5em;
+      }
+
+      &.facebook {
+        color: lighten($social-brand-facebook, 10%);
+
+        &:hover,
+        &:focus {
+          color: $social-brand-facebook;
+        }
+      }
+
+      &.twitter {
+        color: lighten($social-brand-twitter, 10%);
+
+        &:hover,
+        &:focus {
+          color: $social-brand-twitter;
+        }
+      }
+
+      &.linkedin {
+        color: lighten($social-brand-linkedin, 10%);
+
+        &:hover,
+        &:focus {
+          color: $social-brand-linkedin;
+        }
+      }
+    }
+  }
+
+  &-image-wrapper {
+    text-align: center;
+  }
+
+  &-image {
+    width: $instructor-image-size;
+    border-radius: $instructor-image-size/2;
+  }
+
+  &-text {
+    text-align: justify;
+    margin-bottom: 0;
+  }
+}
+
+.row__map {
+  iframe {
+    width: 100%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 3em;
+    margin-left: auto;
+    border: 1px solid $light-grey-2 !important;
+    box-shadow: 2px 2px 2px $light-grey-2;
+    padding: 2px;
+
+    @include tablet {
+      width: 90%;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
+  }
+
+  .about__location-title,
+  .about__location-info {
+    width: 100%;
+    margin: 0 auto;
+
+    @include tablet {
+      width: 90%;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
+  }
+}

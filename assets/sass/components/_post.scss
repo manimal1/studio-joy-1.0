@@ -1,0 +1,40 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+.post-template {
+
+  .fixed-nav {
+    @include mobile {
+      height: 0;
+    }
+  }
+  
+  .post {
+    width: 80%;
+
+    &-head {
+      background-position-y: 50px;
+
+      @include mobile {
+        background-position-y: 0px;
+      }
+    }
+
+    &-title,
+    &-meta {
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 2.8rem;
+    }
+  }
+
+  .author-bio {
+    font-size: 1.1rem;
+  }
+
+  .author-location {
+    font-size: 1.2rem;
+  }
+}

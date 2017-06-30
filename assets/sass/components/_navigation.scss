@@ -1,0 +1,425 @@
+@import '../layout/variables';
+@import '../layout/mixins';
+
+$sticky-shrinknav-menu-height: 50px;
+$sticky-shrinknav-hero-height: 500px;
+$sticky-shrinknav-hero-height-tablet: 428px;
+// $sticky-shrinknav-menu-height: rem-calc(60);
+// $sticky-shrinknav-hero-height: 56.25%; // this fixes video height issue
+
+.collapsable-header {
+    position: relative;
+    transition: all 0.5s ease;
+
+    @include tablet {
+        height: $sticky-shrinknav-hero-height-tablet;
+    }
+
+    @include desktop {
+        height: $sticky-shrinknav-hero-height;
+    }
+}
+
+.sticky-shrinknav-menu {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  height: $sticky-shrinknav-menu-height;
+  line-height: $sticky-shrinknav-menu-height;
+  width: 100%;
+  background-color: rgba($white, 0.8);
+  transition: all 0.5s ease;
+  font-size: 1.2em;
+  z-index: $z-index-3;
+
+  .nav-current {
+    box-shadow: 0 0 0 1px $secondary-color-dark;
+  }
+
+  li {
+    border-radius: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    margin: 0.1em;
+
+    &:hover {
+      box-shadow: 0 0 0 1px $secondary-color-dark;
+    }
+  }
+
+  a {
+    color: $primary-color-dark;
+    font-size: 0.8em;
+
+    @include tablet {
+      font-size: 0.7em;
+      padding: 0.7rem 0.7rem;
+    }
+  }
+}
+
+.sticky-shrinknav-header-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    height: auto;
+    width: 100% !important;
+    margin: 0;
+
+    @include mobile {
+      display: none;
+    }
+}
+
+.sticky-shrinknav-header-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
+    background-color: rgba($white, 0.3);
+    z-index: $z-index-2;
+}
+
+.sticky-shrinknav-menu-logo {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: $sticky-shrinknav-menu-height;
+}
+
+.sticky-shrinknav-login {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    left: auto;
+    font-size: 0.8em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &-text {
+        padding-left: 10px;
+    }
+}
+
+.sticky-shrinknav-header-title,
+.sticky-shrinknav-header-description {
+  transition: all 0.3s ease;
+  position: relative;
+  transform: translateY(-$sticky-shrinknav-menu-height/2);
+  margin-bottom: 0;
+  color: #222;
+  z-index: $z-index-3;
+}
+
+.sticky-shrinknav-header-title {
+  font-size: 4rem;
+}
+
+.sticky-shrinknav-header-description {
+    color: $ternary-color-dark;
+}
+
+.sticky-shrinknav-header {
+  width: 100%;
+  height: $sticky-shrinknav-hero-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lighten($white, 10%);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+
+  @include tablet {
+    height: $sticky-shrinknav-hero-height-tablet;
+  }
+
+  @include mobile {
+      display: none;
+  }
+}
+
+// .sticky-shrinknav-header::after {   // this fixes header height issue
+//   padding-top: $sticky-shrinknav-hero-height;
+//   display: block;
+//   content: '';
+// }
+
+.sticky-shrinknav-list-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &.mobile-hide {
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+// ====== sticky wrapper styling after shrinking ====== //
+header.sticky-shrinknav-wrapper {
+
+  &.collapsable-header {
+    height: 100px;
+  }
+
+  .sticky-shrinknav-header {
+    position: fixed;
+    height: $sticky-shrinknav-menu-height !important;
+    background-color: rgba($white, 0.9);
+    box-shadow: 1px 1px 1px $light-grey-2;
+    z-index: $z-index-max;
+
+    .video-wrapper {
+      height: 0px;
+      display: none;
+    }
+
+    .sticky-shrinknav-header-title,
+    .sticky-shrinknav-header-description {
+      transform: scale(0);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .sticky-shrinknav-menu {
+      background-color: $white;
+  }
+}
+
+
+// ====== mobile menu navigation ====== //
+
+$curtain-menu-color: $primary-color;
+$curtain-menu-text-color: $white;
+$curtain-menu-font-size: 2em;
+$curtain-menu-button-size: 40px;
+
+.curtain-menu {
+    display: none;
+    z-index: $z-index-1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: stretch;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+
+    @include mobile {
+        display: flex;
+    }
+}
+
+.curtain-menu-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: $z-index-2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  transition-delay: 0.5s;
+  visibility: hidden;
+
+  .curtain-menu-list {
+
+    &.vertical {
+      display: none;
+    }
+
+    li {
+      width: 100%;
+      font-weight: 100;
+      font-size: $curtain-menu-font-size;
+      min-height: $curtain-menu-font-size;
+      padding: 1rem;
+      text-align: center;
+      justify-content: center;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        background: rgba($white, 0.7);
+
+        a {
+          color: $curtain-menu-color;
+        }
+      }
+
+      a {
+        color: $curtain-menu-text-color;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.curtain-menu .curtain {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex 0.45s;
+
+  &:nth-child(2) {
+    flex:1 0 100%;
+    background: transparent;
+  }
+
+  &:nth-child(odd){
+    background: darken($curtain-menu-color, 20%);
+  }
+}
+
+.curtain-menu-button {
+    display: none;
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: $z-index-3;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.curtain-menu-button-toggle {
+  width: $curtain-menu-button-size;
+  height: $curtain-menu-button-size;
+  border-radius: 5000px;
+  background: $curtain-menu-text-color;
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  cursor: pointer;
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 3px;
+    background: $curtain-menu-color;
+    transition: transform 0.3s;
+    transition-delay: 0.5s;
+  }
+
+  .bar1{
+    transform: translateX(-50%)translateY(-50%)rotate(-90deg);
+  }
+
+  .bar2{
+    transform: translateX(-50%)translateY(-50%)rotate(-180deg);
+  }
+
+  &:hover {
+    background: $curtain-menu-color;
+
+    div{
+      background: $curtain-menu-text-color;
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.curtain-menu-open {
+  overflow: hidden;
+
+  .vertical {
+    display: table-cell !important;
+  }
+  
+  .curtain:nth-child(2) {
+    flex: 0 0 0%;
+  }
+
+  .curtain-menu-wrapper {
+    transform: translateY(0%);
+    visibility: visible;
+    pointer-events:all;
+  }
+
+ .curtain-menu-button-toggle {
+    .bar1{
+      transform: translateX(-50%)translateY(-50%)rotate(-45deg);
+    }
+
+    .bar2{
+      transform: translateX(-50%)translateY(-50%)rotate(-135deg);
+    }
+  }
+}
+
+.mobile-header {
+    position: relative;
+    display: none;
+
+    @include mobile {
+        display: block;
+    }
+
+    .mobile-header-image {
+        width: 100%;
+        height: auto;
+    }
+
+    &-title {
+        font-size: 4.8rem;
+        color: $white;
+    }
+
+    &-description {
+        color: $white;
+    }
+}
+
+.mobile-header-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: $white;
+    text-align: center;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+// Fixed nav bar for blog posts and pages
+.fixed-nav {
+  .sticky-shrinknav-menu {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    background: $white;
+    border-bottom: 1px solid $light-grey-2;
+  }
+}
